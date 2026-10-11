@@ -1,69 +1,103 @@
-import Image from "next/image";
-import styles from "./page.module.css";
 
-export default function Home() {
+const modules = [
+  {
+    title: "Bookings",
+    description: "View and manage transport bookings.",
+    href: "/bookings",
+    icon: "📦",
+    color: "#2563eb",
+  },
+  {
+    title: "Fleet",
+    description: "Monitor vehicles, drivers and availability.",
+    href: "/fleet",
+    icon: "🚚",
+    color: "#059669",
+  },
+  {
+    title: "Reports",
+    description: "Explore operational statistics and trends.",
+    href: "/reports",
+    icon: "📊",
+    color: "#7c3aed",
+  },
+];
+
+export default function HomePage() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>
-            To get started, edit the{" "}
-            <code className={styles.code}>page.tsx</code> file.
-          </h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <main
+      style={{
+        minHeight: "100vh",
+        padding: "40px",
+        backgroundColor: "#f8fafc",
+        color: "#1e293b",
+        fontFamily: "Arial, sans-serif",
+      }}
+    >
+      <header style={{ marginBottom: "36px" }}>
+        <h1 style={{ fontSize: "32px", marginBottom: "8px" }}>
+          Lewis TMS Dashboard
+        </h1>
+
+        <p style={{ color: "#64748b", fontSize: "16px" }}>
+          Manage your transport operations from one place.
+        </p>
+      </header>
+
+      <section
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+          gap: "24px",
+        }}
+      >
+        {modules.map((module) => (
+          <article
+            key={module.href}
+            style={{
+              backgroundColor: "#ffffff",
+              border: "1px solid #e2e8f0",
+              borderRadius: "12px",
+              padding: "24px",
+              boxShadow: "0 2px 8px rgba(15, 23, 42, 0.05)",
+            }}
           >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+            <div style={{ fontSize: "36px", marginBottom: "16px" }}>
+              {module.icon}
+            </div>
+
+            <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>
+              {module.title}
+            </h2>
+
+            <p
+              style={{
+                color: "#64748b",
+                lineHeight: 1.6,
+                minHeight: "50px",
+              }}
+            >
+              {module.description}
+            </p>
+
+            <a
+              href={module.href}
+              style={{
+                display: "inline-block",
+                marginTop: "12px",
+                padding: "10px 16px",
+                backgroundColor: module.color,
+                color: "#ffffff",
+                textDecoration: "none",
+                borderRadius: "6px",
+                fontWeight: 600,
+              }}
+            >
+              Open {module.title} →
+            </a>
+          </article>
+        ))}
+      </section>
+    </main>
   );
 }
