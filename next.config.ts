@@ -8,27 +8,27 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/bookings",
-        destination: "http://localhost:5006/bookings",
+        destination: "https://bookings-app-mfe.onrender.com/bookings"
       },
       {
         source: "/bookings/:path*",
-        destination: "http://localhost:5006/bookings/:path*",
+        destination: "https://bookings-app-mfe.onrender.com/bookings/:path*"
       },
       {
         source: "/fleet",
-        destination: "http://localhost:5007/fleet",
+        destination: "https://fleet-app-mfe.onrender.com/fleet",
       },
       {
         source: "/fleet/:path*",
-        destination: "http://localhost:5007/fleet/:path*",
+        destination: "https://fleet-app-mfe.onrender.com/fleet/:path*",
       },
       {
         source: "/reports",
-        destination: "http://localhost:5008/reports",
+        destination: "https://reports-app-mfe.onrender.com/reports",
       },
       {
         source: "/reports/:path*",
-        destination: "http://localhost:5008/reports/:path*",
+        destination: "https://reports-app-mfe.onrender.com/reports/:path*",
       },
     ];
   },
