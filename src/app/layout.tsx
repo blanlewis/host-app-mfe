@@ -32,7 +32,7 @@ export default function RootLayout({
   children,
 }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}suppressHydrationWarning>
       <body>
         <div style={{ display: "flex", minHeight: "100vh" }}>
           <CustomSidebar
