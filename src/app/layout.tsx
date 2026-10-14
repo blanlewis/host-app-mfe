@@ -32,8 +32,8 @@ export default function RootLayout({
   children,
 }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}suppressHydrationWarning>
-      <body>
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`} suppressHydrationWarning>
+      <body suppressHydrationWarning>
         <div style={{ display: "flex", minHeight: "100vh" }}>
           <CustomSidebar
             navigationItems={navigationItems}
